@@ -4,7 +4,9 @@ class Api::V1::ColorizersController < ApplicationController
   # GET /colorizers
   # GET /colorizers.json
   def index
-    @colorizers = Colorizer.all
+    colorizers = Colorizer.all
+
+    render json: colorizers
   end
 
   # GET /colorizers/1
@@ -25,15 +27,10 @@ class Api::V1::ColorizersController < ApplicationController
   # POST /colorizers.json
   def create
     @colorizer = Colorizer.new(colorizer_params)
-    
-    respond_to do |format|
-      if @colorizer.save
-        format.html { redirect_to @colorizer, notice: 'Colorizer was successfully created.' }
-        format.json { render :show, status: :created, location: @colorizer }
-      else
-        format.html { render :new }
-        format.json { render json: @colorizer.errors, status: :unprocessable_entity }
-      end
+    if @colorizer.save
+     render json: @colorizer, status: :created, location: api_v1_colorizer_url(@colorizer)
+    else
+     render json: @colorizer.errors, status: :unprocessable_entity
     end
   end
 
