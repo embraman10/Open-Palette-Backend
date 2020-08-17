@@ -10,4 +10,4 @@ require 'open-uri'
 require 'net/http'
 require 'json'
 
-Colorizer.create(background: Colorizer.background, font_style: Colorizer.font_style, slug:"test")
+Colorizer.create(background: Colorizer.background, font_style: Colorizer.font_style, slug:"/api/v1/colorizers")
