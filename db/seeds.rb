@@ -8,4 +8,4 @@
 
 require 'open-uri'
 
-Colorizer.create(background:"#BEBE16”, font_style: "times new roman", frame_style: "border border-primary", font_color: "FF0000", slug:"colorizer")
+Colorizer.create(background:"hello_world", font_style:"meh", frame_style:"is", font_color:"a", slug:"test")
