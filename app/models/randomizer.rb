@@ -1,2 +1,0 @@
-class Randomizer < ApplicationRecord
-end

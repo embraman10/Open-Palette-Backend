@@ -1,2 +1,0 @@
-class RandomizersController < ApplicationController
-end

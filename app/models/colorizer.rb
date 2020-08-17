@@ -1,0 +1,2 @@
+class Colorizer < ApplicationRecord
+end
