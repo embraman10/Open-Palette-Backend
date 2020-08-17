@@ -7,5 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'open-uri'
+require 'net/http'
+require 'json'
 
-Colorizer.create(background:"hello_world", font_style:"meh", frame_style:"is", font_color:"a", slug:"test")
+Colorizer.create(background: Colorizer.background, font_style: Colorizer.font_style, slug:"test")

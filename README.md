@@ -1,24 +1,7 @@
-# README
+YEET
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Monday - Render API data to our front end
+Tuesday - login/ maaaaaybe html for the palette stuff
+Wednesday - finish palette stuff / add user cards to footer
+Thursday - polishing/ catch up
+Friday - IT DONE
