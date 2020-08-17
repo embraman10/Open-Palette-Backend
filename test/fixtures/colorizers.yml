@@ -5,9 +5,11 @@ one:
   font: MyString
   frame_style: MyString
   font_color: MyString
+  slug: MyString
 
 two:
   background: MyString
   font: MyString
   frame_style: MyString
   font_color: MyString
+  slug: MyString

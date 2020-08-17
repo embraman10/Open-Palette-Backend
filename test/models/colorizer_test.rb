@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RandomizerTest < ActiveSupport::TestCase
+class ColorizerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

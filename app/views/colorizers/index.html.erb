@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Colorizers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Background</th>
+      <th>Font</th>
+      <th>Frame style</th>
+      <th>Font color</th>
+      <th>Slug</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @colorizers.each do |colorizer| %>
+      <tr>
+        <td><%= colorizer.background %></td>
+        <td><%= colorizer.font %></td>
+        <td><%= colorizer.frame_style %></td>
+        <td><%= colorizer.font_color %></td>
+        <td><%= colorizer.slug %></td>
+        <td><%= link_to 'Show', colorizer %></td>
+        <td><%= link_to 'Edit', edit_colorizer_path(colorizer) %></td>
+        <td><%= link_to 'Destroy', colorizer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Colorizer', new_colorizer_path %>

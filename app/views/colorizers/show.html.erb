@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Background:</strong>
+  <%= @colorizer.background %>
+</p>
+
+<p>
+  <strong>Font:</strong>
+  <%= @colorizer.font %>
+</p>
+
+<p>
+  <strong>Frame style:</strong>
+  <%= @colorizer.frame_style %>
+</p>
+
+<p>
+  <strong>Font color:</strong>
+  <%= @colorizer.font_color %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @colorizer.slug %>
+</p>
+
+<%= link_to 'Edit', edit_colorizer_path(@colorizer) %> |
+<%= link_to 'Back', colorizers_path %>
