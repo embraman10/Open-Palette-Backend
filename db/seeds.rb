@@ -1,13 +1,35 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 require 'open-uri'
 require 'net/http'
 require 'json'
+require 'rest-client'
+require 'httparty'
 
-Colorizer.create(background: Colorizer.background, font_style: Colorizer.font_style, slug:"/api/v1/colorizers")
+Colorizer.destroy_all
+# rm = RestClient.get 'https://unpkg.com/color-name-list@6.10.1/dist/colornames.json'
+# rm_array = JSON.parse(rm)["hex"]
+
+# rm_array.each do |colors|
+#     Colorizer.create(background: colors["name"], font_style: hex["hex"])
+# end
+
+
+
+
+# Colorizer.create(font_style: Colorizer.font_style)
+
+
+
+
+
+easy_response= HTTParty.get('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCw1JW5PZLjsJnnJfKJcQhaG3petm1SZ48')
+easy_hash = easy_response.to_hash
+
+easy_hash.each do |response|
+    Colorizer.create(font_style: response)
+end
+
+
+# easy_hash['results'].each do |fonts|
+#     Colorizer.create(font_style: fonts["family"])
+# end

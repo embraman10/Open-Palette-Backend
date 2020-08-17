@@ -6,16 +6,16 @@ def self.font_style
     uri = URI.parse(url)
     response = Net::HTTP.get_response(uri)
     parsed = JSON.parse(response.body)
-    parsed["files"]
+    parsed["items"]
 end
 
-def self.background
-    url = "https://unpkg.com/color-name-list@6.10.1/dist/colornames.json"
-    uri = URI.parse(url)
-    response = Net::HTTP.get_response(uri)
-    parsed = JSON.parse(response.body)
-    parsed["name"]
-end
+# def self.background
+#     url = "https://unpkg.com/color-name-list@6.10.1/dist/colornames.json"
+#     uri = URI.parse(url)
+#     response = Net::HTTP.get_response(uri)
+#     parsed = JSON.parse(response.body)
+#     parsed["name"]
+# end
 
 # def self.framestyle
 # end

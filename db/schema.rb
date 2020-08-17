@@ -13,9 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_08_17_165627) do
 
   create_table "colorizers", force: :cascade do |t|
-    t.string "background"
     t.string "font_style"
-    t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
