@@ -2,8 +2,10 @@
 
 one:
   user: one
-  randomizer: one
+  font_changer: one
+  background_color_changer: one
 
 two:
   user: two
-  randomizer: two
+  font_changer: two
+  background_color_changer: two

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserCardsControllerTest < ActionDispatch::IntegrationTest
+class PalettizerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

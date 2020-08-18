@@ -59,5 +59,5 @@ end
 # ****** User Information ******
 
 10.times do
-    User.create(email: Faker::Internet.email, password: "password", picture: Faker::Fillmurray.image)
+    User.create(email: Faker::Internet.email, password: "password")
 end
