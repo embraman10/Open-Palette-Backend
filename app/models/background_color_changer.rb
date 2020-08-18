@@ -1,0 +1,2 @@
+class BackgroundColorChanger < ApplicationRecord
+end

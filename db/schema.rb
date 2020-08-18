@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_17_165627) do
+ActiveRecord::Schema.define(version: 2020_08_18_000302) do
+
+  create_table "background_color_changers", force: :cascade do |t|
+    t.string "colorHex"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "colorizers", force: :cascade do |t|
+    t.string "background"
     t.string "font_style"
+    t.string "frame_style"
+    t.string "font_color"
+    t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "font_changers", force: :cascade do |t|
+    t.string "fontFamily"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
