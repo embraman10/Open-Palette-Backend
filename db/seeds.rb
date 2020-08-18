@@ -4,6 +4,7 @@ require 'net/http'
 require 'json'
 require 'rest-client'
 require 'httparty'
+require 'faker'
 
 # Colorizer.destroy_all
 # rm = RestClient.get 'https://unpkg.com/color-name-list@6.10.1/dist/colornames.json'
@@ -14,13 +15,7 @@ require 'httparty'
 # end
 
 
-
-
 # Colorizer.create(font_style: Colorizer.font_style)
-
-
-
-
 
 # easy_response= HTTParty.get('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCw1JW5PZLjsJnnJfKJcQhaG3petm1SZ48')
 # easy_hash = easy_response.to_hash
@@ -36,12 +31,11 @@ require 'httparty'
 
 FontChanger.destroy_all
 BackgroundColorChanger.destroy_all
+User.destroy_all
 
+# ****** Font Changer Information ******
 fontData = RestClient.get "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCw1JW5PZLjsJnnJfKJcQhaG3petm1SZ48"
-
-
 fontDataArray = JSON.parse(fontData)["items"]
-
 
 fontDataArray.each do |object|
     FontChanger.create(
@@ -49,6 +43,8 @@ fontDataArray.each do |object|
     )
 end
 
+
+# ****** Colorizer Information ******
 colorData = RestClient.get "https://unpkg.com/color-name-list@6.10.1/dist/colornames.json"
 colorDataArray = JSON.parse(colorData)
 
@@ -57,4 +53,11 @@ colorDataArray.each do |object|
     BackgroundColorChanger.create(
     colorHex: object["hex"]
     )
+end
+
+
+# ****** User Information ******
+
+10.times do
+    User.create(email: Faker::Internet.email, password: "password", picture: Faker::Fillmurray.image)
 end
