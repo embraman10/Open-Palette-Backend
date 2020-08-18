@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :background_color_changers
+  resources :font_changers
   namespace :api do 
     namespace :v1 do
         resources :colorizers 

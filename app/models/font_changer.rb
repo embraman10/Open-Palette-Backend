@@ -1,0 +1,2 @@
+class FontChanger < ApplicationRecord
+end
