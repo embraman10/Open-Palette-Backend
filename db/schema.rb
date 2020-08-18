@@ -10,16 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_000302) do
+ActiveRecord::Schema.define(version: 2020_08_18_210042) do
 
   create_table "background_color_changers", force: :cascade do |t|
     t.string "colorHex"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "colorizers", force: :cascade do |t|
-    t.string "font_style"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,23 +24,25 @@ ActiveRecord::Schema.define(version: 2020_08_18_000302) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_cards", force: :cascade do |t|
+  create_table "palettizers", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "randomizer_id", null: false
+    t.integer "font_changer_id", null: false
+    t.integer "background_color_changer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["randomizer_id"], name: "index_user_cards_on_randomizer_id"
-    t.index ["user_id"], name: "index_user_cards_on_user_id"
+    t.index ["background_color_changer_id"], name: "index_palettizers_on_background_color_changer_id"
+    t.index ["font_changer_id"], name: "index_palettizers_on_font_changer_id"
+    t.index ["user_id"], name: "index_palettizers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password"
-    t.string "picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "user_cards", "randomizers"
-  add_foreign_key "user_cards", "users"
+  add_foreign_key "palettizers", "background_color_changers"
+  add_foreign_key "palettizers", "font_changers"
+  add_foreign_key "palettizers", "users"
 end
