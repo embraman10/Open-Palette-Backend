@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserCardTest < ActiveSupport::TestCase
+class UserPaletteTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

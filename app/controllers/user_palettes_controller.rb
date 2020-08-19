@@ -1,0 +1,2 @@
+class UserPalettesController < ApplicationController
+end

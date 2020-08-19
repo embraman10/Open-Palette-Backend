@@ -1,0 +1,2 @@
+module UserPalettesHelper
+end

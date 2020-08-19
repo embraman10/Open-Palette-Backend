@@ -1,2 +1,0 @@
-class UserCardsController < ApplicationController
-end
