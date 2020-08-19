@@ -1,2 +1,0 @@
-class PalettizersController < ApplicationController
-end
