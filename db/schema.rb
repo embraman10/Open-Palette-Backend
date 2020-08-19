@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_000302) do
+ActiveRecord::Schema.define(version: 2020_08_19_152332) do
 
   create_table "background_color_changers", force: :cascade do |t|
     t.string "colorHex"
@@ -18,39 +18,23 @@ ActiveRecord::Schema.define(version: 2020_08_18_000302) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "colorizers", force: :cascade do |t|
-    t.string "background"
-    t.string "font_style"
-    t.string "frame_style"
+  create_table "user_palettes", force: :cascade do |t|
+    t.string "background_color"
     t.string "font_color"
-    t.string "slug"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "font_changers", force: :cascade do |t|
-    t.string "fontFamily"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_cards", force: :cascade do |t|
+    t.string "font_family"
     t.integer "user_id", null: false
-    t.integer "randomizer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["randomizer_id"], name: "index_user_cards_on_randomizer_id"
-    t.index ["user_id"], name: "index_user_cards_on_user_id"
+    t.index ["user_id"], name: "index_user_palettes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "email"
     t.string "password"
-    t.string "picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "user_cards", "randomizers"
-  add_foreign_key "user_cards", "users"
+  add_foreign_key "user_palettes", "users"
 end
