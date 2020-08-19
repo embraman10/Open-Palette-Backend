@@ -1,2 +1,26 @@
 class UserPalettesController < ApplicationController
+
+    def index
+        render({json: UserPalette.all})
+    end
+    
+
+    def create
+        @userPalette = UserPalette.new(userPalette_params)
+        if @userPalette.save
+          render json: @userPalette, status: :created
+        else
+          render json: @userPalette.errors, status: :unprocessable_entity
+        end
+    end
+
+    private
+        # Use callbacks to share common setup or constraints between actions.
+        def set_event
+          @userPalette = UserPalette.find(params[:id])
+        end
+        # Only allow a trusted parameter "white list" through.
+        def userPalette_params
+          params.require(:user_palette).permit(:background_color, :font_color, :font_family, :user_id)
+    end
 end

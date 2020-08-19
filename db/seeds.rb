@@ -7,10 +7,9 @@ require 'httparty'
 require 'faker'
 
 
-
-BackgroundColorChanger.destroy_all
 User.destroy_all
-
+BackgroundColorChanger.destroy_all
+UserPalette.destroy_all
 
 
 10.times do
