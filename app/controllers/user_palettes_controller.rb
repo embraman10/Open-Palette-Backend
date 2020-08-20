@@ -18,6 +18,14 @@ class UserPalettesController < ApplicationController
           render json: @userPalette.errors, status: :unprocessable_entity
         end
     end
+
+    def update
+      if @userPalette.update(userPalette_params)
+        render json: @userPalette
+      else
+        render json: @userPalette.errors, status: :unprocessable_entity
+      end
+    end
     
     def destroy
       @userPalette.destroy
