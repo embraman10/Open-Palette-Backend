@@ -1,4 +1,5 @@
 class UserPalettesController < ApplicationController
+  before_action :set_event, only: [:show, :update, :destroy]
 
     def index
         render({json: UserPalette.all})
@@ -13,7 +14,11 @@ class UserPalettesController < ApplicationController
           render json: @userPalette.errors, status: :unprocessable_entity
         end
     end
-
+    
+    def destroy
+      @userPalette.destroy
+    end
+    
     private
         # Use callbacks to share common setup or constraints between actions.
         def set_event
@@ -23,4 +28,6 @@ class UserPalettesController < ApplicationController
         def userPalette_params
           params.require(:user_palette).permit(:background_color, :font_color, :font_family, :user_id)
     end
+
+    
 end
