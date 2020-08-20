@@ -6,6 +6,10 @@ class UserPalettesController < ApplicationController
     end
     
 
+      def show
+        render json: @userPalette
+      end
+
     def create
         @userPalette = UserPalette.new(userPalette_params)
         if @userPalette.save
